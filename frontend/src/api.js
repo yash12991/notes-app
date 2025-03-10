@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:5000/api/notes/";
+// const API_URL = "http://localhost:5000/api/notes/";
 const API_URL = "https://notes-app-syxd.onrender.com";
 // const API_URL = "https://notes-app-jorq.onrender.com";
 

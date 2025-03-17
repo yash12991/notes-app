@@ -12,7 +12,13 @@ import route from "./routes/Route.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000" }));
+// app.use(cors({ origin: "http://localhost:3000" }));
+const corsOptions = {
+    origin: ['http://localhost:3000',  'https://notes-app-syxd.onrender.com'],
+    credentials: true,
+};
+app.use(cors(corsOptions));
+
 
 const PORT = process.env.PORT || 5000;
 

@@ -13,16 +13,6 @@ import route from "./routes/Route.js";
 const app = express();
 app.use(express.json());
 
-const httpServer = createServer(app);
-
-const io = new Server(httpServer, {
-    cors: {
-        origin: ['http://localhost:3000',  'https://notes-app-syxd.onrender.com'],
-        credentials: true,
-    }
-});
-
-
 
 // app.use(cors({ origin: "http://localhost:3000" }));
 const corsOptions = {

@@ -15,14 +15,15 @@ app.use(express.json());
 
 
 // app.use(cors({ origin: "http://localhost:3000" }));
-const corsOptions = {
-    origin: ['http://localhost:10000', 'https://notes-app-syxd.onrender.com'],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-};
+// const corsOptions = {
+//     origin: ['http://localhost:10000', 'https://notes-app-syxd.onrender.com/api/notes'],
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 
 
 const PORT = process.env.PORT || 5000;

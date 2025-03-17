@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import { createServer } from "http";
 
 dotenv.config();
 
@@ -9,6 +10,14 @@ console.log("MONGO_URI:", process.env.MONGO_URI); // Add this line to check the 
 console.log("PORT:", process.env.PORT); // Add this line to check the PORT
 
 import route from "./routes/Route.js";
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {
+    cors: {
+        origin: ['http://localhost:3000',  'https://notes-app-syxd.onrender.com'],
+        credentials: true,
+    }
+});
 
 const app = express();
 app.use(express.json());

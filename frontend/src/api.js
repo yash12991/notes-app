@@ -28,7 +28,7 @@ export const updateNote = async(id,note)=>{
 
 export const deleteNote = async (id) => {
   try {
-    await axios.delete(`${API_URL}${id}`);
+    await axios.delete(`${API_URL}/${id}`);
   } catch (error) {
     console.error("Error deleting note:", error);
   }

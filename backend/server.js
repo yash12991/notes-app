@@ -16,9 +16,12 @@ app.use(express.json());
 
 // app.use(cors({ origin: "http://localhost:3000" }));
 const corsOptions = {
-    origin: ['http://localhost:3000',  'https://notes-app-syxd.onrender.com'],
+    origin: ['http://localhost:3000', 'https://notes-app-syxd.onrender.com'],
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 };
+
 app.use(cors(corsOptions));
 
 

@@ -39,7 +39,7 @@ const NotePage = () => {
     >
       <div
         className={`w-full max-w-3xl p-8 rounded-xl shadow-lg transition-all ${
-          darkMode ? "bg-gray-800" : "bg-white"
+          darkMode ? "bg-black-800" : "bg-white"
         }`}
       >
         {/* Header with Dark Mode Toggle */}

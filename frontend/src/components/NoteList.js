@@ -67,7 +67,7 @@ const NotesList = () => {
                   .filter((note) => note.title.toLowerCase().includes(searchQuery.toLowerCase()))
                   .map((note) => (
                     <div key={note._id} className="relative p-5 bg-white dark:bg-gray-800 shadow-lg rounded-lg hover:scale-105 transition transform hover:shadow-2xl">
-                      <div onClick={() => navigate(`/note/${note._id}`)} className={`min-h-screen p-6 ${darkMode ? "bg-zinc-900 text-white" : "bg-gray-100 text-black"}cursor-pointer`}>
+                      <div onClick={() => navigate(`/note/${note._id}`)} className={`min-h-screen p-6 ${darkMode ? "bg-zinc-900 text-white" : "bg-gray-800 text-black"}cursor-pointer`}>
                         <h2 className="text-xl font-bold text-blue-700 dark:text-blue-400"  >{note.title}</h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-300">
                                               {note.content.split(" ").slice(0, 20).join(" ")}...

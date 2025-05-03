@@ -43,7 +43,7 @@ const NoteForm = () => {
 
   return (
     <div className={`${theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100"} min-h-screen flex items-center justify-center`}>
-      <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-lg">
+      <div className={`${theme === "dark" ? "bg-zinc-900 text-white" : "bg-gray-300"} p-6 rounded-lg shadow-xl w-full max-w-lg`}  >
         <h2 className="text-3xl font-bold mb-4 text-center">
           {id ? "Edit Note" : "Create Note"}
         </h2>

@@ -42,8 +42,10 @@ const NotesList = () => {
       <div className="max-w-4xl mx-auto">
 
 
+
       <div className={`{flex justify-between items-center mb-6`}>
       {/* <div className={`{flex justify-between items-center mb-6 ${darkMode === "dark" ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}> */}
+
 
           <h1 className="text-4xl font-extrabold">My Notes</h1>
           <div className="flex gap-4">

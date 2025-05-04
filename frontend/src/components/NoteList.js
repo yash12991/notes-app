@@ -17,6 +17,7 @@ const NotesList = () => {
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
+    document.documentElement.classList.toggle("dark", darkMode); // 👈 KEY LINE
   }, [darkMode]);
 
   const handleDelete = async (id) => {
@@ -38,9 +39,9 @@ const NotesList = () => {
   };
 
   return (
-    <div className={`min-h-screen p-6`}>
+    <div className="min-h-screen p-6 bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="max-w-4xl mx-auto">
-      <div className={`flex justify-between items-center mb-6 ${darkMode ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}>
+        <div className="flex justify-between items-center mb-6 bg-rose-300 dark:bg-stone-950 text-black dark:text-white p-4 rounded-lg">
           <h1 className="text-4xl font-extrabold">My Notes</h1>
           <div className="flex gap-4">
             <input 
@@ -58,7 +59,7 @@ const NotesList = () => {
             </button>
           </div>
         </div>
-        
+
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
           <SortableContext items={notes.map((note) => note._id)} strategy={verticalListSortingStrategy}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -66,12 +67,14 @@ const NotesList = () => {
                 notes
                   .filter((note) => note.title.toLowerCase().includes(searchQuery.toLowerCase()))
                   .map((note) => (
-                    // <div key={note._id} className={`relative p-5 bg-white dark:bg-gray-800 shadow-lg rounded-lg hover:scale-105 transition transform hover:shadow-2xl`}> 
-                     <div key={note._id} className={`relative p-5 bg-white ${darkMode ? "bg-gray-300":"bg-purple-200"} shadow-lg rounded-lg hover:scale-105 transition transform hover:shadow-2xl`}>
+                    <div 
+                      key={note._id} 
+                      className="relative p-5 bg-purple-200 dark:bg-gray-700 shadow-lg rounded-lg hover:scale-105 transition transform hover:shadow-2xl"
+                    >
                       <div onClick={() => navigate(`/note/${note._id}`)} className="cursor-pointer">
                         <h2 className="text-xl font-bold text-blue-700 dark:text-blue-400">{note.title}</h2>
                         <p className="mt-2 text-gray-600 dark:text-gray-300">
-                                              {note.content.split(" ").slice(0, 20).join(" ")}...
+                          {note.content.split(" ").slice(0, 20).join(" ")}...
                         </p>
                       </div>
                       <div className="absolute top-2 right-2 flex gap-2">
@@ -85,7 +88,7 @@ const NotesList = () => {
                     </div>
                   ))
               ) : (
-                <p className="text-gray-500 text-center">No notes found. Add one!</p>
+                <p className="text-gray-500 dark:text-gray-400 text-center">No notes found. Add one!</p>
               )}
             </div>
           </SortableContext>

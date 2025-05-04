@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getNotes, deleteNote } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 import { Trash2, Sun, Moon, PlusCircle, Edit3 } from "lucide-react";
-import { DndContext, closestCenter } from "@dnd-kit/core";
+import { DndContext, closestCenter } from "@dnd-kit/core"; 
 import { SortableContext, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 
 const NotesList = () => {
@@ -40,7 +40,7 @@ const NotesList = () => {
   return (
     <div className={`min-h-screen p-6`}>
       <div className="max-w-4xl mx-auto">
-        <div className={`flex justify-between items-center mb-6 ${darkMode ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}>
+      <div className={`flex justify-between items-center mb-6 ${darkMode ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}>
           <h1 className="text-4xl font-extrabold">My Notes</h1>
           <div className="flex gap-4">
             <input 

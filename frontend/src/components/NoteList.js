@@ -38,7 +38,7 @@ const NotesList = () => {
   };
 
   return (
-    <div className={`min-h-screen p-6 ${darkMode ? "bg-grey-950 text-white" : "bg-fuchsia-300 text-black"}`}>
+    <div className={`min-h-screen p-6 ${darkMode ? "bg-fuchsia-950 text-white" : "bg-fuchsia-300 text-black"}`}>
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-4xl font-extrabold">My Notes</h1>

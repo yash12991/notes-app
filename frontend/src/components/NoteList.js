@@ -44,8 +44,12 @@ const NotesList = () => {
 
 
 
-
        <div className={`flex justify-between items-center mb-6 ${darkMode === "dark" ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}> 
+
+
+
+  
+      <div className={`flex justify-between items-center mb-6 ${darkMode === "dark" ? "bg-stone-950 text-white" : "bg-rose-300 text-black"}`}>
 
 
 
